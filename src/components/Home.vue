@@ -50,8 +50,8 @@ onUnmounted(() => {
           </StackLayout>
         </ScrollView>
         <GridLayout rows="auto" margin="20" columns="auto,*,auto">
-          <Label text="Popular Restaurants" />
-          <Label col="2" text="View more" />
+          <Label text="Popular items" />
+          <Label col="2" text="View more" color="#EB764A" fontSize="12" />
         </GridLayout>
         <ScrollView orientation="horizontal" :scrollBarIndicatorVisible="false">
 
