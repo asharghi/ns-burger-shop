@@ -1,6 +1,16 @@
+.m-icon {
+    font-family: "Material Icons", "MaterialIcons-Regular";
+    font-weight: 400;
+    font-size: 20;
+    color: #0C0C1C;
+}
 
+.m-icon.outlined {
+    font-family: "Material Icons Outlined", "MaterialIconsOutlined-Regular";
+}
 
-ActionBar {
-    background-color: #65adf1;
-    color: white;
+label {
+    color: #0C0C1C;
+    font-family: "Roboto", "Roboto-Medium";
+    font-weight: 500;
 }
