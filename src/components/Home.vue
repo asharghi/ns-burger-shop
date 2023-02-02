@@ -2,6 +2,7 @@
 import { computed, ref } from "nativescript-vue";
 import Icon from "./Icon.vue";
 import CategoryItem from "./CategoryItem.vue";
+import ProductItem from "./ProductItem.vue";
 import BottomBar from "./BottomBar.vue";
 import Details from "~/views/Details.vue";
 import { mockDataApplication } from "~/MockData";
@@ -28,8 +29,8 @@ function setSelectCategoryIndex(index: number) {
             </ContentView>
           </GridLayout>
 
-          <Label text="Let's find &#xa;food near you" margin="20" fontSize="30" textWrap="true" />
-          <GridLayout android:padding="5 20" ios:padding="0 20" borderRadius="15" background="#F4F3F1" rows="auto"
+          <Label text="Let's find &#xa;food near you" margin="20" fontSize="30" textWrap="true" fontWeight="bold" />
+          <GridLayout android:padding="5 20" ios:padding="20" borderRadius="15" background="#F4F3F1" rows="auto"
             columns="auto,*,auto" margin="0 20">
             <Icon name="search" col="0" marginRight="10" verticalAlignment="center" />
             <TextField borderBottomWidth="0" margin="0" hint="Search" hintColor="red"
@@ -43,13 +44,13 @@ function setSelectCategoryIndex(index: number) {
             </StackLayout>
           </ScrollView>
           <GridLayout rows="auto" margin="20" columns="auto,*,auto">
-            <Label text="Popular items" />
+            <Label text="Popular items" fontWeight="bold" />
             <Label col="2" text="View more" color="#EB764A" fontSize="12" />
           </GridLayout>
           <ScrollView orientation="horizontal" :scrollBarIndicatorVisible="false">
-            <StackLayout>
-              <Label @tap="$navigateTo(Details, {props: {item}})" v-for="(item, i) in itemsFilter" :key="i"
-                :text="item.title + ' TAP ME TO NAVIGATE'"></Label>
+            <StackLayout orientation="horizontal">
+              <ProductItem :item="item" @tap="$navigateTo(Details, {props: {item}})" v-for="(item, i) in itemsFilter"
+                :key="i" />
             </StackLayout>
           </ScrollView>
         </StackLayout>

@@ -1,13 +1,17 @@
 <template>
-	<GridLayout :class="{ 'shadow': !selected }" rows="auto" marginRight="10" :background="background" padding="20 25"
-		borderRadius="30">
-		<Label :text="name" fontSize="14" :color="color" />
+	<GridLayout :class="{ 'shadow': !selected }" rows="auto" marginRight="10" :background="background"
+		:padding="name.length === 2 ? '5 10' : '20 25'" borderRadius="30">
+		<Label verticalAlignment="center" :text="name" :fontSize="name.length === 2 ? 34 : 14" :color="color"
+			:fontWeight="selected ? 'normal' : 'bold'" />
 	</GridLayout>
 </template>
 <script lang="ts" setup>
 import { computed } from "nativescript-vue";
 const props = defineProps({
-	name: String,
+	name: {
+		type: String,
+		required: true
+	},
 	selected: Boolean
 });
 const background = computed(() => {
