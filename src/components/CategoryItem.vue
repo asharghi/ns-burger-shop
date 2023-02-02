@@ -5,7 +5,7 @@
 	</GridLayout>
 </template>
 <script lang="ts" setup>
-import { defineProps, computed } from "nativescript-vue";
+import { computed } from "nativescript-vue";
 const props = defineProps({
 	name: String,
 	selected: Boolean

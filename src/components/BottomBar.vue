@@ -1,6 +1,5 @@
-
 <script lang="ts" setup>
-import { defineProps, computed } from "nativescript-vue";
+import { computed } from "nativescript-vue";
 import Icon from "./Icon.vue";
 
 const props = defineProps({
@@ -14,7 +13,7 @@ const props = defineProps({
     <Icon fontSize="25" name="favorite_border" :outlined="true" col="1" horizontalAlignment="center" color="#CBCACE"
       marginTop="20" />
     <ContentView col="2" padding="20" horizontalAlignment="center">
-      <ContentView width="60" height="60" background="#EB764A" class="search-shadow" borderRadius="60">
+      <ContentView width="60" height="60" background="#EB764A" class="box-shadow_primary" borderRadius="60">
         <Icon fontSize="25" name="search" color="white" horizontalAlignment="center" />
       </ContentView>
     </ContentView>
@@ -26,8 +25,4 @@ const props = defineProps({
 
   </GridLayout>
 </template>
-<style>
-.search-shadow {
-  box-shadow: 0 20px 20px rgb(255, 176, 147)
-}
-</style>
+

@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .m-icon {
     font-family: "Material Icons", "MaterialIcons-Regular";
     font-weight: 400;
@@ -14,3 +18,19 @@ label {
     font-family: "Roboto", "Roboto-Medium";
     font-weight: 500;
 }
+
+.box-shadow {
+    box-shadow: 0px px 4px 0px rgba(189, 189, 189, 0.75);;
+}
+.box-shadow_primary {
+    box-shadow: 0 20px 20px rgb(255, 176, 147)
+}
+
+.color-primary {
+    color: #EB764A;
+}
+
+.bg-primary {
+    background: #EB764A;
+}
+

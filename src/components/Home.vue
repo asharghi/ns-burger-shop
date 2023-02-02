@@ -1,16 +1,19 @@
 <script lang="ts" setup>
-import { ref } from "nativescript-vue";
+import {computed, ref} from "nativescript-vue";
 import Icon from "./Icon.vue";
 import CategoryItem from "./CategoryItem.vue";
 import BottomBar from "./BottomBar.vue";
+import Details from "~/views/Details.vue";
+import {mockDataApplication} from "~/MockData";
 
 const categories = ref(['All', '🍖 Meats item', '🍳', '🦐', '🍕', '🍦']);
 const selectedCategoryIndex = ref(1);
 
+const itemsFilter = computed(() => selectedCategoryIndex.value === 0 ? mockDataApplication : mockDataApplication.filter(item => item.category === selectedCategoryIndex.value));
+
 function setSelectCategoryIndex(index: number) {
   selectedCategoryIndex.value = index;
 }
-
 </script>
 
 <template>
@@ -43,7 +46,10 @@ function setSelectCategoryIndex(index: number) {
             <Label col="2" text="View more" color="#EB764A" fontSize="12" />
           </GridLayout>
           <ScrollView orientation="horizontal" :scrollBarIndicatorVisible="false">
-
+            <StackLayout>
+              <Label @tap="$navigateTo(Details, {props: {item}})" v-for="(item, i) in itemsFilter" :key="i"
+                     :text="item.title + ' TAP ME TO NAVIGATE'"></Label>
+            </StackLayout>
           </ScrollView>
         </StackLayout>
         <BottomBar row="1" />
