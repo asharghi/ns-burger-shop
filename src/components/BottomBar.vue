@@ -8,21 +8,27 @@ const props = defineProps({
 
 </script>
 <template>
-  <GridLayout iosOverflowSafeArea="false" rows="auto,auto,1" columns="*,*,100,*,*">
-    <Icon fontSize="25" name="home" color="#EB764A" horizontalAlignment="center" marginTop="20" />
-    <Icon fontSize="25" name="favorite_border" :outlined="true" col="1" horizontalAlignment="center" color="#CBCACE"
-      marginTop="20" />
-    <ContentView col="2" padding="20" horizontalAlignment="center">
-      <ContentView width="60" height="60" background="#EB764A" class="box-shadow_primary" borderRadius="60">
-        <Icon fontSize="25" name="search" color="white" horizontalAlignment="center" />
-      </ContentView>
-    </ContentView>
-    <Icon fontSize="25" name="notifications" :outlined="true" col="3" horizontalAlignment="center" color="#CBCACE"
-      marginTop="20" />
-    <Icon fontSize="25" name="shopping_bag" :outlined="true" col="4" horizontalAlignment="center" color="#CBCACE"
-      marginTop="20" />
-    <ContentView marginTop="5" row="1" width="5" height="5" borderRadius="10" background="#EB764A" />
+  <GridLayout columns="*">
+    <GridLayout marginBottom="10" verticalAlignment="bottom" iosOverflowSafeArea="false" rows="auto,auto,1"
+      columns="*,*,100,*,*">
+      <Icon fontSize="25" name="home" color="#EB764A" horizontalAlignment="center" />
+      <Icon fontSize="25" name="favorite_border" :outlined="true" col="1" horizontalAlignment="center"
+        color="#CBCACE" />
 
+      <Icon fontSize="25" name="notifications" :outlined="true" col="3" horizontalAlignment="center" color="#CBCACE" />
+      <Icon fontSize="25" name="shopping_bag" :outlined="true" col="4" horizontalAlignment="center" color="#CBCACE" />
+      <ContentView marginTop="5" row="1" width="5" height="5" borderRadius="10" background="#EB764A" />
+
+    </GridLayout>
+    <GridLayout rows="100" columns="*,100,*">
+
+      <ContentView col="1" width="60" height="60" horizontalAlignment="center" background="#EB764A"
+        class="box-shadow_primary" borderRadius="60">
+        <Icon fontSize="25" name="search" color="white" verticalAlignment="center" horizontalAlignment="center" />
+      </ContentView>
+    </GridLayout>
   </GridLayout>
+
+
 </template>
 

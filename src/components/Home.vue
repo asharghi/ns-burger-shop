@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import {computed, ref} from "nativescript-vue";
+import { computed, ref } from "nativescript-vue";
 import Icon from "./Icon.vue";
 import CategoryItem from "./CategoryItem.vue";
 import BottomBar from "./BottomBar.vue";
 import Details from "~/views/Details.vue";
-import {mockDataApplication} from "~/MockData";
+import { mockDataApplication } from "~/MockData";
 
 const categories = ref(['All', '🍖 Meats item', '🍳', '🦐', '🍕', '🍦']);
 const selectedCategoryIndex = ref(1);
@@ -29,11 +29,12 @@ function setSelectCategoryIndex(index: number) {
           </GridLayout>
 
           <Label text="Let's find &#xa;food near you" margin="20" fontSize="30" textWrap="true" />
-          <GridLayout padding="20" borderRadius="15" background="#F4F3F1" rows="auto" columns="auto,*,auto"
-            margin="0 20">
-            <Icon name="search" col="0" marginRight="10" />
-            <TextField hint="Search" hintColor="red" :style="{ 'placeholder-color': '#5F5E64' }" col="1" />
-            <Icon name="filter_alt" :outlined="true" marginLeft="10" col="2" />
+          <GridLayout android:padding="5 20" ios:padding="0 20" borderRadius="15" background="#F4F3F1" rows="auto"
+            columns="auto,*,auto" margin="0 20">
+            <Icon name="search" col="0" marginRight="10" verticalAlignment="center" />
+            <TextField borderBottomWidth="0" margin="0" hint="Search" hintColor="red"
+              :style="{ 'placeholder-color': '#5F5E64' }" col="1" />
+            <Icon name="filter_alt" :outlined="true" marginLeft="10" col="2" verticalAlignment="center" />
           </GridLayout>
           <ScrollView marginTop="10" orientation="horizontal" :scrollBarIndicatorVisible="false">
             <StackLayout orientation="horizontal" padding="20">
@@ -48,7 +49,7 @@ function setSelectCategoryIndex(index: number) {
           <ScrollView orientation="horizontal" :scrollBarIndicatorVisible="false">
             <StackLayout>
               <Label @tap="$navigateTo(Details, {props: {item}})" v-for="(item, i) in itemsFilter" :key="i"
-                     :text="item.title + ' TAP ME TO NAVIGATE'"></Label>
+                :text="item.title + ' TAP ME TO NAVIGATE'"></Label>
             </StackLayout>
           </ScrollView>
         </StackLayout>

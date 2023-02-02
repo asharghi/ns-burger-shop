@@ -20,7 +20,11 @@ const color = computed(() => {
 </script>
 
 <style>
-.shadow {
+.ns-ios .shadow {
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.shadow {
+	box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
 }
 </style>
